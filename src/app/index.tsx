@@ -2,8 +2,6 @@ import { Link } from "expo-router";
 import React from "react";
 import { Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import ButtonGroup from '@mui/material/ButtonGroup';
-import Button from '@mui/material/Button';
 
 export default function Page() {
   return (
@@ -30,12 +28,6 @@ function Content() {
             <Text className="mx-auto max-w-[700px] text-lg text-center text-gray-500 md:text-xl dark:text-gray-400">
               Learn more about some available features below.
             </Text>
-
-            <ButtonGroup variant="outlined" aria-label="Basic button group">
-              <Button>One</Button>
-              <Button>Two</Button>
-              <Button>Three</Button>
-            </ButtonGroup>
           </View>
         </View>
       </View>
