@@ -2,16 +2,27 @@ import { Link } from "expo-router";
 import React from "react";
 import { Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { PaperProvider } from 'react-native-paper';
+import { Ionicons } from '@expo/vector-icons';
+import { Button } from 'react-native-paper';
 
 export default function Page() {
   return (
-    <View className="flex flex-1">
-      <Header />
-      <Content />
-      <Footer />
-    </View>
+    <PaperProvider>
+      <View className="flex flex-1">
+        <Header />
+        <Content />
+        <Footer />
+      </View>
+    </PaperProvider>
   );
 }
+
+const ButtonComponent = () => (
+  <Button mode="contained" icon={() => <Ionicons name="add-circle-outline" size={20} color="black" />} onPress={() => console.log('Pressed')}>
+    Press me
+  </Button>
+);
 
 function Content() {
   return (
@@ -21,13 +32,16 @@ function Content() {
           <View className="flex flex-col items-center gap-4 text-center">
             <Text
               role="heading"
-              className="text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
+              className="text-3xl text-center native:text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl "
             >
               Let's Build!
             </Text>
             <Text className="mx-auto max-w-[700px] text-lg text-center text-gray-500 md:text-xl dark:text-gray-400">
               Learn more about some available features below.
             </Text>
+          </View>
+          <View className="mt-8 flex flex-col items-center gap-4 text-center">
+            <ButtonComponent />
           </View>
         </View>
       </View>
